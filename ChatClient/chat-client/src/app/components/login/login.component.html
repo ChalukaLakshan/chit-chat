@@ -1,0 +1,51 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Chit-Chat Login</span>
+    <span class="example-spacer"></span>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="row m-auto">
+  <div class="col-md-6 offset-3">
+    <form class="form" #form="ngForm" (submit)="onSubmit(form)">
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          placeholder="Username"
+          [(ngModel)]="userModel.username"
+          name="username"
+          autocomplete="off"
+          required
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input
+          type="password"
+          matInput
+          placeholder="Password"
+          [(ngModel)]="userModel.password"
+          name="password"
+          autocomplete="off"
+          required
+        />
+      </mat-form-field>
+
+      <div class="row">      
+          <button
+            type="submit"
+            mat-raised-button
+            color="primary"
+            [disabled]="form.invalid"
+          >
+            Login
+          </button>&nbsp;&nbsp;
+          <a mat-button routerLink="/register" routerLinkActive="active" >Register now</a>        
+      </div>
+    </form>
+  </div>
+</div>
+<div class="col-md-6 offset-5" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>

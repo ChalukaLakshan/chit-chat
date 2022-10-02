@@ -1,0 +1,77 @@
+*.orig
+*.idea
+#ignore thumbnails created by windows
+Thumbs.db
+#Ignore files build by Visual Studio
+*.obj
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tss
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.kml
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+Logs/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+*.Publish.xml
+.sass-cache
+*.[Dd]ot[Ss]ettings
+#.nuget
+_UpgradeReport_Files/
+.vs/
+
+#IgnoreUploads
+*/App_Data/Uploads*/
+
+#Ignore App_Data
+*/App_Data/.diagnostics
+*/App_Data/nsb*
+
+#Ignore vim swap files
+*.swp
+*.swo
+
+#Ignore ctags files
+*.tags
+
+#Ignore GuidToIntGenerator files
+GuidToIntGenerator/node_modules/**/*
+*.db
+
+#Ignore publish xml files, which contain hard-coded filesystem paths
+*.pubxml
+
+#Ignore windows folder customization
+desktop.ini
+
+#Ignore mac git files
+*.DS_Store
+
+*/Properties/SlowCheetah
+typings
+
+*.dbmdl
+*.jfm
+
+#Ignore Visual Studio Code settings files
+*.vscode
+launch.json
+delete_bin_and_obj.ps1
+

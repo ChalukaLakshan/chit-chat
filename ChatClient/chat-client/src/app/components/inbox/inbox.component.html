@@ -1,0 +1,54 @@
+<div class="inbox">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Users</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div class="message-box">
+    <mat-list role="list">
+      <mat-list-item
+        role="listitem"
+        *ngFor="let user of users; let i = index"
+        (click)="onUserSelect(user.username)"
+        >{{ user.username }}</mat-list-item
+      >
+    </mat-list>
+  </div>
+</div>
+<div class="wrapper">
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      placeholder="Username"
+      [(ngModel)]="searchText"
+      name="username"
+      autocomplete="off"
+    /> </mat-form-field
+  >&nbsp;
+  <button (click)="searchUser()" mat-raised-button color="primary">
+    Search</button
+  >&nbsp;
+  <button (click)="logout()" mat-raised-button color="warn">Logout</button>
+  <div class="chat-box">
+    <div class="header">
+      <h1>Hello {{ loggedUsername }}, What's on your mind?</h1>
+    </div>
+    <div class="message-box">
+      <li *ngFor="let message of messages; let i = index">
+        <span class="date">{{ message.date | date: "medium" }}</span> <br />
+        <strong>{{ message.fromUsername }}:</strong> {{ message.messageText }}
+      </li>
+    </div>
+    <section>
+      <textarea
+        [(ngModel)]="textareaValue"
+        placeholder="say hi!"
+        (keyup.enter)="sendMessage()"
+      ></textarea>
+      <button (click)="sendMessage()" mat-raised-button color="primary">
+        Send
+      </button>
+    </section>
+  </div>
+</div>

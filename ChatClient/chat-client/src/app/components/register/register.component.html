@@ -1,0 +1,68 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Chit-Chat Register</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="row m-auto">
+  <div class="col-md-6 offset-3">
+    <form [formGroup]="formModel" (submit)="onSubmit()">
+      <mat-form-field class="example-full-width">
+        <input
+        matInput
+        placeholder="Username"
+        formControlName="username"
+        name="username"
+        autocomplete="off"
+        required
+      />
+      </mat-form-field>
+
+      <div formGroupName="credentials">       
+        <mat-form-field class="example-full-width">
+          <input
+            type="password"
+            matInput
+            placeholder="Password"
+            formControlName="password"
+            name="password"
+            autocomplete="off"           
+            required
+          />
+          <mat-hint>Errors appear instantly!</mat-hint>
+          <mat-error>
+            Minimum eight characters, at least one letter, one number and one special character
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input
+            type="password"
+            matInput
+            placeholder="Confirm Password"
+            formControlName="confirmPassword"
+            name="confirmPassword"
+            autocomplete="off"
+            required
+          />
+          <mat-hint>Errors appear instantly!</mat-hint>
+          <mat-error>
+            Password and Confirm Password values should be match
+          </mat-error>
+        </mat-form-field>
+      </div><br/>
+      <div class="row">      
+          <button
+            type="submit"
+            mat-raised-button
+            color="primary"
+            [disabled]="formModel.invalid"
+          >
+            Register
+          </button>&nbsp;&nbsp;
+          <a mat-button routerLink="" routerLinkActive="active" >Login</a>        
+      </div>
+    </form>
+  </div>
+</div>
+<div class="col-md-6 offset-5" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>
