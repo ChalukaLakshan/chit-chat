@@ -7,7 +7,7 @@
 
 4. Open the Package Manager Console and select the Default project as Chat.Data
 
-5. Now need to update the database using the code FIRST approach (Please run the following Commands respectively).
+5. Now need to update/create the database using the code FIRST approach (Please run the following Commands respectively).
 
     - add-migration command will create folder as Migrations in Chat.Data project.
     - update-databse command will be responsible for creating the tables accordingly in the database.
