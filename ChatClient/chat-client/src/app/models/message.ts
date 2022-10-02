@@ -1,6 +1,5 @@
 export class Message {
-  fromUsername: string;
-  toUserName: string;
+  fromUsername: string;  
   messageText: string;
   date: Date;
 }

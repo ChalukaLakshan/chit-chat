@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     private userService: UserService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.isLoading = false;
     window.sessionStorage.removeItem("token");
     window.sessionStorage.removeItem("username");

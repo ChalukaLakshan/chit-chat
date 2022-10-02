@@ -29,7 +29,6 @@ namespace Chat.Domain.Services
 
             foreach (var message in messages)
             {
-                message.ToUserName = message.ToUser.Username;
                 message.FromUserName = message.FromUser.Username;
             }
 

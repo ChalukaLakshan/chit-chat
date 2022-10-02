@@ -25,11 +25,6 @@ namespace Chat.Data.EfCore
                 .HasOne(m => m.FromUser)
                 .WithMany()
                 .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Message>()
-                .HasOne(m => m.ToUser)
-                .WithMany()
-                .OnDelete(DeleteBehavior.Restrict);
         }
 
         public DbSet<User> Users { get; set; }

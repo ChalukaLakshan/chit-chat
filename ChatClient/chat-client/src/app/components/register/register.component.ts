@@ -11,8 +11,8 @@ import { User } from "../../models/user";
   styleUrls: ["./register.component.css"],
 })
 export class RegisterComponent implements OnInit {
-  isLoading: boolean = true;
-  formModel: FormGroup;
+  public isLoading: boolean = true;
+  public formModel: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
     user.password = this.formModel.value.credentials.password;
 
     this.userService.register(user).subscribe(
-      (response) => {        
+      (response) => {
         this.formModel.reset();
         this.snackBar.open(
           "Well done! You successfully registered with the Chit-Chat",
@@ -73,17 +73,15 @@ export class RegisterComponent implements OnInit {
           { duration: 5 * 1000 }
         );
 
-        this.router.navigate(['']);
+        this.router.navigate([""]);
         this.isLoading = false;
       },
       (error) => {
         if (error && error.error && error.error.message) {
-          this.snackBar.open('ERROR', error.error.message);
+          this.snackBar.open("ERROR", error.error.message);
         }
         this.isLoading = false;
       }
-    );  
-
-    
+    );
   }
 }

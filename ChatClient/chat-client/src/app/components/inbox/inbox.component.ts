@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { MatSnackBar } from "@angular/material";
 import { Router } from "@angular/router";
-import { Subject, Subscription } from "rxjs";
 import { Message } from "src/app/models/message";
 import { User } from "src/app/models/user";
 import { ChatService } from "src/app/services/chat.service";
@@ -17,9 +16,7 @@ export class InboxComponent implements OnInit, OnDestroy {
   public users: User[] = [];
   public loggedUsername: string;
   public textareaValue: string;
-  public searchText: string = '';
-
-  private subscription: Subscription;
+  public searchText: string = "";
 
   constructor(
     private router: Router,
@@ -33,7 +30,7 @@ export class InboxComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.textareaValue = "";   
+    this.textareaValue = "";
 
     this.loggedUsername = sessionStorage.getItem("username");
     this.getSignalRMessage();
@@ -68,7 +65,7 @@ export class InboxComponent implements OnInit, OnDestroy {
           );
 
           if (typeof index) {
-            this.users.splice(index, 1);            
+            this.users.splice(index, 1);
           }
         }
       },
@@ -97,7 +94,6 @@ export class InboxComponent implements OnInit, OnDestroy {
     if (this.textareaValue) {
       let message = new Message();
       message.fromUsername = this.loggedUsername;
-      message.toUserName = "Sakuni"; //should be replaced
       message.date = new Date();
       message.messageText = this.textareaValue;
 

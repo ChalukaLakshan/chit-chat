@@ -29,7 +29,6 @@ namespace ChitChat.Api.Hubs
         {
             var message = _mapper.Map<Message>(messageDto);
             message.FromUserId = (await _userService.FindUserByUsernameAsync(messageDto.FromUsername).ConfigureAwait(false)).Id;
-            message.ToUserId = (await _userService.FindUserByUsernameAsync(messageDto.ToUsername).ConfigureAwait(false)).Id;
 
             await _messageService.CreateMessageAsync(message);
 

@@ -18,7 +18,7 @@ export class ChatService {
     this.init();
   }
 
-  init(): void {
+  private init(): void {
     this.createConnection();
     this.startConnection();
   }

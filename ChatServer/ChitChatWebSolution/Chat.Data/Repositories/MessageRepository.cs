@@ -24,7 +24,7 @@ namespace Chat.Data.Repositories
         {
             return await chitChatDbContext.Messages
                 .Include(x => x.FromUser)
-                .Include(x => x.ToUser).AsNoTracking().ToListAsync();
+                .AsNoTracking().ToListAsync();
         }
     }
 }
