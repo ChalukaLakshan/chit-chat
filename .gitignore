@@ -75,3 +75,5 @@ typings
 launch.json
 delete_bin_and_obj.ps1
 
+/ChatClient/chat-client/node_modules
+/ChatServer/ChitChatWebSolution/Chat.Data/Migrations
