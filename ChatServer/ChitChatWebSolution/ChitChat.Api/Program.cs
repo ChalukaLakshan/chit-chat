@@ -18,6 +18,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddSignalR();
 
 builder.Services.AddControllers();
 
@@ -109,7 +110,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         }
     };
 });
-builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -137,6 +137,6 @@ app.UseCors("ChitChatPolicy");
 
 app.UseAuthorization();
 
-app.MapHub<ChitChatHub>("/chat");
+app.MapHub<ChitChatHub>("/chat");  
 
 app.Run();
